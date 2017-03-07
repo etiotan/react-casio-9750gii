@@ -1,0 +1,56 @@
+// /**
+//  *N
+//  */
+//   if(N === "" & FV === "0"){
+//     var numberYearsPV =
+//   }
+//     /**
+//      *Present Value
+//      */
+//   if(PV === "")
+//   {
+//     var presentvalue = FV / (1 + ear);
+//     this.setState({PV: presentvalue});
+//   }
+//   /**
+//    * PMT if FV is 0
+//    */
+//   if(PMT === "" && FV === "0")
+//   {
+//     var annuityPV = (ear * PV)/(1 - Math.pow((1+ear),-N))
+//     this.setState({PMT: annuityPV})
+//   }
+//     /**
+//      * PMT if PV is 0
+//      */
+//   if(PMT === "" && PV === "0")
+//   {
+//     var annuityFV = (ear * FV)/(Math.pow((1+ear),N) -1 )
+//     this.setState({PMT: annuityFV})
+//   }
+//   /**
+//    *Future Value
+//    */
+//   if(FV === ""){
+//     var futurevalue = PV * (1 + ear)
+//     this.setState({FV: futurevalue})
+//   }
+//   /**
+//    * PMT
+//    */
+
+
+
+
+
+
+//   if(isNaN(N) ||
+//      isNaN(I) ||
+//      isNaN(PV) ||
+//      isNaN(PMT) ||
+//      isNaN(FV) ||
+//      isNaN(PY) ||
+//      isNaN(CY))
+// {
+//     alert("Error, Numbers Only")
+//   }
