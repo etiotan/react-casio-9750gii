@@ -61,8 +61,8 @@ export default class Calculator extends React.Component {
 
                     {/* Submit Button */}
                     <div className="block">
-                      <button onClick={this.props.handleSubmit} style={{color:"#55AA55"}}>Calc</button>
-                      <button onClick={this.props.handleClear} style={{color: "#D46A6A"}}>Clear</button>
+                      <button className="buttonCalc" onClick={this.props.handleSubmit} style={{color:"rgba(85, 170, 85, 1)", borderColor:"rgba(85, 170, 85, 1)", borderStyle:"solid"}}>Calc</button>
+                      <button className="buttonClear" onClick={this.props.handleClear} style={{color: "rgba(212, 106, 106, 1)", borderColor:"rgba(212, 106, 106, 1)", borderStyle:"solid"}}>Clear</button>
                     </div>
 
                 </form>

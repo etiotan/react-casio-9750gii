@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Economica" );
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 /*General styling*/
 body{
@@ -33,7 +33,17 @@ label{
 input{
   width: 10vw;
   font-size: 1.5vw;
-  border-radius: .25vw;
+  border: .1vw solid rgba(0,0,0, .25);
+  box-sizing: border-box;
+  padding: .5vw 0px .5vw .5vw;
+  outline: none;
+  transition: all 0.40s ease-in-out
+}
+/*twitter focus*/
+input:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: .1vw solid rgba(81, 203, 238, 1);
+  margin: 0 auto;
 }
 
 /*Clear & Submit Button*/
@@ -42,18 +52,25 @@ button{
   margin-left: 1vw;
   margin-right: 1vw;
   font-size: 2vw;
+  padding: 0 1.5vw 0 1.5vw;
   transition: all 200ms ease;
-  box-sizing: border-box;
   text-transform: uppercase;
-  font-family: 'Lato', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   letter-spacing: 2px;
-  outline: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background-color: transparent;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-
+  transition: all .75s ease
 }
-
+.buttonCalc:hover{
+  background-color: rgba(85, 170, 85, .4);
+}
+.buttonClear:hover{
+  background-color: rgba(212, 106, 106,.4);
+}
+button:focus{
+  outline: 0
+}
 /*answer*/
 .answer{
   color: #55AA55;
@@ -63,7 +80,6 @@ button{
   left: 50%;
   transform: translate(-50%)
 }
-
 
 /*explanation How to Use*/
 .userInterface{
