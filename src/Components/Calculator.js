@@ -3,9 +3,9 @@ import React from 'react';
 export default class Calculator extends React.Component {
 
     render() {
-/**
- * Variable Constants
- */
+        /**
+         * Variable Constants
+         */
         const N=this.props.Calculator.N;
         const I=this.props.Calculator.I;
         const PV=this.props.Calculator.PV;
@@ -16,21 +16,23 @@ export default class Calculator extends React.Component {
 
         return (
             <div className="calculator">
-                <h2><span>c</span>asio 9750gii</h2>
-                <form>
+                {/* Title */}
+                <h2><span style={{color:"#FD263B"}}>c</span>asio 9750gii</h2>
 
+                {/* Calculator begins */}
+                <form>
                     <div className="block">
-                      <label>Number of Years</label>
+                      <label>Periods</label>
                       <input onChange={this.props.handleChangeN} placeholder="N" value={N}></input>
                     </div>
 
                     <div className="block">
-                      <label>Interest Rate %</label>
+                      <label>Interest %</label>
                       <input onChange={this.props.handleChangeI} placeholder="I%" value={I}></input>
                     </div>
 
                     <div className="block">
-                      <label>Present Value</label>
+                      <label>PV</label>
                       <input onChange={this.props.handleChangePV} placeholder="PV" value={PV}></input>
                     </div>
 
@@ -40,26 +42,27 @@ export default class Calculator extends React.Component {
                     </div>
 
                     <div className="block">
-                      <label>Future Value</label>
+                      <label>FV</label>
                       <input onChange={this.props.handleChangeFV} placeholder="FV" value={FV}></input>
                     </div>
 
                     <div className="block">
-                      <label>Payments per Year</label>
+                      <label>P/Y</label>
                       <input onChange={this.props.handleChangePY} placeholder="P/Y" value={PY}></input>
                     </div>
 
                     <div className="block">
-                      <label>Compounding per Year</label>
+                      <label>C/Y</label>
                       <input onChange={this.props.handleChangeCY} placeholder="C/Y" value={CY}></input>
                     </div>
-    {/* Answer Output */}
-    <h1 className="answer">{this.props.answer}</h1>
+
+                    {/* Answer Output */}
+                    <h1 className="answer">{this.props.answer}</h1>
 
                     {/* Submit Button */}
                     <div className="block">
-                      <button onClick={this.props.handleSubmit}>Calculate</button>
-                      <button onClick={this.props.handleClear}>Clear</button>
+                      <button onClick={this.props.handleSubmit} style={{color:"#55AA55"}}>Calc</button>
+                      <button onClick={this.props.handleClear} style={{color: "#D46A6A"}}>Clear</button>
                     </div>
 
                 </form>

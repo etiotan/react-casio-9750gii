@@ -9,12 +9,12 @@ export default class Ui extends React.Component {
 
 
         return (
-            <div className= "userInterface">
-              <h5>How to Use</h5>
+            <div className="userInterface">
               <ul>
+                <li>Built for Ryerson FIN300</li>
                 <li>Able to solve for N,I,P,PV,PMT,FV</li>
                 <li>Leave input box empty on the one you would like to solve for</li>
-                <li><span>Restrictions: </span>Unable to solve for N or I on bond valuations</li>
+                <li><span>Restrictions: </span>Periods & interest on bond valuations</li>
                 <li>Full documentation on GitHub</li>
               </ul>
               {/* github link */}

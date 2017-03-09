@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Economica" );
+@import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
+/*General styling*/
 body{
   margin: 15px;
   padding: 0;
@@ -8,6 +9,14 @@ body{
   font-size: 2vw;
   text-align: center;
   background-color: #E5E4E2;
+}
+
+/*calculator*/
+.calculator{
+  background-color: white;
+  width: 33%;
+  margin: 0 auto;
+  padding: 2vw
 }
 .block{
   display: block;
@@ -19,56 +28,57 @@ label{
   width: 15vw;
   display: inline-block;
   text-align: left;
+  white-space: nowrap;
 }
 input{
   width: 10vw;
   font-size: 1.5vw;
   border-radius: .25vw;
 }
-input:hover{
 
-}
 /*Clear & Submit Button*/
 button{
-  margin-top: 6vw;
+  margin-top: 5.3vw;
   margin-left: 1vw;
   margin-right: 1vw;
-  border-color: transparent;
-  background-color: #DBC5C9;
-  font-size: 3vw;
+  font-size: 2vw;
   transition: all 200ms ease;
   box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: 'Lato', Arial, sans-serif;
+  letter-spacing: 2px;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+
 }
-button:hover{
-  transform: translateY(-2px);
-}
-h4{
-  padding: 0;
-  margin: 0;
-}
+
 /*answer*/
 .answer{
-  color: green;
+  color: #55AA55;
   padding: 0;
   margin: 0;
   position: absolute;
   left: 50%;
   transform: translate(-50%)
 }
-span{
-  color: red;
-}
+
 
 /*explanation How to Use*/
-h5{
-  text-decoration: underline;
+.userInterface{
+  text-align: center;
+  margin-top: 2vw;
+  padding: 0;
 }
+
 .userInterface ul{
   list-style: decimal;
   list-style-position: inside;
+  background-color: white;
+  width: 33%;
   margin: 0 auto;
-  padding: 0;
-  display: inline-block;
+  padding: 2vw
 
 }
 .userInterface li{
@@ -87,19 +97,64 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.fa-github{
+.fa-user-o, .fa-github{
+  margin: 10px;
   display: block;
-  transition: all 500ms ease
+  transition: all 500ms ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 .fa-github:hover{
   transform: translateY(-3px)
 }
-.fa-user-o{
-  margin: 10px;
-  display: block;
-  transition: all 500ms ease;
-  text-decoration: none;
-}
+
 .fa-user-o:hover{
   transform: translateY(-3px)
+}
+/*Media query for phones*/
+@media (max-width: 700px){
+
+.calculator{
+  width: 80%;
+}
+
+.userInterface ul{
+  width: 80%;
+}
+
+input, label{
+  width: 30%;
+  font-size: 5vw;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact{
+  bottom: 0;
+  position: relative;
+  margin: 2vw;
+  transition: all 500ms ease
+}
+
+.fa-user-o, .fa-github{
+  display: inline-block;
+  font-size: 15vw;
+}
+
+.answer{
+  font-size: 10vw;
+  position: relative;
+  margin-top: 5vw;
+}
+
+.userInterface, button{
+  font-size: 5vw;
+}
+
+h2{
+  font-size: 8vw;
+  margin: 0;
+  margin-bottom: 5vw;
+}
+
 }
