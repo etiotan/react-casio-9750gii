@@ -8,11 +8,12 @@ body{
   font-size: 2vw;
   text-align: center;
   background-color: #E5E4E2;
+  color: #191919;
 }
 
 /*calculator*/
 .calculator{
-  background-color: white;
+  background-color: #F6F1EC;
   width: 33%;
   margin: 0 auto;
   padding: 2vw;
@@ -29,6 +30,7 @@ label{
   display: inline-block;
   text-align: left;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 input{
   width: 10vw;
@@ -37,7 +39,9 @@ input{
   box-sizing: border-box;
   padding: .5vw 0px .5vw .5vw;
   outline: none;
-  transition: all 0.40s ease-in-out
+  transition: all 0.40s ease-in-out;
+  background-color: #f6f1ec;
+  color: #191919;
 }
 /*twitter focus*/
 input:focus{
@@ -93,7 +97,7 @@ button:focus{
 .userInterface ul{
   list-style: decimal;
   list-style-position: inside;
-  background-color: white;
+  background-color: #F6F1EC;
   width: 33%;
   margin: 0 auto;
   padding: 2vw;
