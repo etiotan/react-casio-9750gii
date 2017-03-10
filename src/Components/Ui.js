@@ -1,10 +1,8 @@
 import React from 'react';
 
-export default class Ui extends React.Component {
-
-    render() {
+export const Ui = (props) => {
         /**
-         * User interface
+         * User interface Stateless Component
          */
         return (
             <div className="userInterface">
@@ -17,5 +15,4 @@ export default class Ui extends React.Component {
             </div>
         );
 
-    }
 }
