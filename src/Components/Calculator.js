@@ -83,25 +83,25 @@ handleSubmit(event){
       }
 
 //Future Value Annuity End of the Year
-    if(this.state.FV===""){
+    else if(this.state.FV===""){
       const futureValue = (PV * Math.pow((1+R),N) + PMT*(Math.pow((1+R),N)-1)/R)*(-1)
       this.setState({Ans: futureValue.toFixed(4)})
       }
 
 //Payments
-    if(this.state.PMT===""){
+    else if(this.state.PMT===""){
       const paymentAmount = (PV/((1 - Math.pow((1+R),-N))/R) + FV/((Math.pow((1+R),N)-1)/R))*(-1)
       this.setState({Ans: paymentAmount.toFixed(4)})
 
       }
 //Years
-    if(this.state.N===""){
+    else if(this.state.N===""){
       const numberYears = Math.log(((-1)*FV*R)/(PV*I))/(Math.log(1+R))
       this.setState({Ans: numberYears.toFixed(4)})
       }
 
 //Interest for PV&FV
-    if(this.state.I===""){
+    else if(this.state.I===""){
       const interestRate =  Math.pow((FV/PV),(1/N)) - 1
       this.setState({Ans:interestRate.toFixed(4)})
       console.log(interestRate)
