@@ -20,20 +20,22 @@ constructor(props){
  * Handles and records Changes in the Input Boxes
  */
 //bind takes the first argument.
+//this is the entire class of calculaotr
 inputChangeHandler (name,event) {
-    this.setState({ [name]: event.target.value });
+    this.setState({[name]: event.target.value });
   }
 
 handleClear(event){
   event.preventDefault();
-  this.setState({N: ""});
-  this.setState({I: ""});
-  this.setState({PV: ""});
-  this.setState({PMT: ""});
-  this.setState({FV: ""});
-  this.setState({PY: 1});
-  this.setState({CY: 1});
-  this.setState({Ans: ""});
+    this.setState({
+                N: "",
+                I: "",
+                PV: "",
+                PMT: "",
+                FV: "",
+                PY: "1",
+                CY: "1",
+                Ans: ""});
 }
 //Submit button
 handleSubmit(event){
