@@ -19,35 +19,10 @@ constructor(props){
 /**
  * Handles and records Changes in the Input Boxes
  */
-handleChangeN(event){
-  let numb = event.target.value;
-  this.setState({N: numb});
-}
-handleChangeI(event){
-  let numb = event.target.value;
-  this.setState({I: numb});
-}
-handleChangePV(event){
-  let numb = event.target.value;
-  this.setState({PV: numb});
-}
-handleChangePMT(event){
-  let numb = event.target.value;
-  this.setState({PMT: numb});
-}
-handleChangeFV(event){
-  let numb = event.target.value;
-  this.setState({FV: numb});
-}
-handleChangePY(event){
-  let numb = event.target.value;
-  this.setState({PY: numb});
-}
-handleChangeCY(event){
-  let numb = event.target.value;
-  this.setState({CY: numb});
-}
-
+//bind takes the first argument.
+inputChangeHandler (name,event) {
+    this.setState({ [name]: event.target.value });
+  }
 
 handleClear(event){
   event.preventDefault();
@@ -72,7 +47,6 @@ handleSubmit(event){
     const PY=parseFloat(this.state.PY)
     const CY=parseFloat(this.state.CY)
     const R=parseFloat((PY*(Math.pow((1+I/CY),CY/PY)-1))/PY)
-    console.log(R)
 
 /**
  * Formulas Begin here.
@@ -106,7 +80,6 @@ handleSubmit(event){
     else if(this.state.I===""){
       const interestRate =  Math.pow((FV/PV),(1/N)) - 1
       this.setState({Ans:interestRate.toFixed(4)})
-      console.log(interestRate)
       }
 }
 
@@ -130,13 +103,13 @@ handleSubmit(event){
 
                 {/* Calculator begins */}
                 <form>
-                    <Input changeHandler={this.handleChangeN.bind(this)} name={this.props.N} default={N} />
-                    <Input changeHandler={this.handleChangeI.bind(this)} name={this.props.I} default={I} />
-                    <Input changeHandler={this.handleChangePV.bind(this)} name={this.props.PV} default={PV} />
-                    <Input changeHandler={this.handleChangePMT.bind(this)} name={this.props.PMT} default={PMT} />
-                    <Input changeHandler={this.handleChangeFV.bind(this)} name={this.props.FV}  default={FV} />
-                    <Input changeHandler={this.handleChangePY.bind(this)} name={this.props.PY} default={PY} />
-                    <Input changeHandler={this.handleChangeCY.bind(this)} name={this.props.CY} default={CY} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.N)} name={this.props.N} default={N} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.I)} name={this.props.I} default={I} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.PV)} name={this.props.PV} default={PV} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.PMT)} name={this.props.PMT} default={PMT} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.FV)} name={this.props.FV}  default={FV} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.PY)} name={this.props.PY} default={PY} />
+                    <Input changeHandler={this.inputChangeHandler.bind(this,this.props.CY)} name={this.props.CY} default={CY} />
 {/*
                     <div className="block">
                       <label>C/Y</label>
@@ -158,6 +131,8 @@ handleSubmit(event){
 
     }
 }
+
+//takes in props
 const Input = (props)=>{
   return (
     <div className="block">
@@ -167,8 +142,8 @@ const Input = (props)=>{
   )
 }
 Calculator.defaultProps = {
-              N:"Periods",
-              I:"I%",
+              N:"N",
+              I:"I",
               PV:"PV",
               PMT:"PMT",
               FV:"FV",
