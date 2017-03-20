@@ -5,8 +5,8 @@ export default class Calculator extends React.Component {
 /**
  * Constructor States for the calculator
  */
-constructor(){
-  super();
+constructor(props){
+  super(props);
   this.state={N: "120",
               I: "5",
               PV: "",
@@ -47,6 +47,8 @@ handleChangeCY(event){
   let numb = event.target.value;
   this.setState({CY: numb});
 }
+
+
 handleClear(event){
   event.preventDefault();
   this.setState({N: ""});
@@ -128,40 +130,18 @@ handleSubmit(event){
 
                 {/* Calculator begins */}
                 <form>
-                    <div className="block">
-                      <label>Periods</label>
-                      <input onChange={this.handleChangeN.bind(this)} placeholder="N" value={N}></input>
-                    </div>
-
-                    <div className="block">
-                      <label>Interest %</label>
-                      <input onChange={this.handleChangeI.bind(this)} placeholder="I%" value={I}></input>
-                    </div>
-
-                    <div className="block">
-                      <label>PV</label>
-                      <input onChange={this.handleChangePV.bind(this)} placeholder="PV" value={PV}></input>
-                    </div>
-
-                    <div className="block">
-                      <label>Payments $</label>
-                      <input onChange={this.handleChangePMT.bind(this)} placeholder="PMT" value={PMT}></input>
-                    </div>
-
-                    <div className="block">
-                      <label>FV</label>
-                      <input onChange={this.handleChangeFV.bind(this)} placeholder="FV" value={FV}></input>
-                    </div>
-
-                    <div className="block">
-                      <label>P/Y</label>
-                      <input onChange={this.handleChangePY.bind(this)} placeholder="P/Y" value={PY}></input>
-                    </div>
-
+                    <Input changeHandler={this.handleChangeN.bind(this)} name={this.props.N} default={N} />
+                    <Input changeHandler={this.handleChangeI.bind(this)} name={this.props.I} default={I} />
+                    <Input changeHandler={this.handleChangePV.bind(this)} name={this.props.PV} default={PV} />
+                    <Input changeHandler={this.handleChangePMT.bind(this)} name={this.props.PMT} default={PMT} />
+                    <Input changeHandler={this.handleChangeFV.bind(this)} name={this.props.FV}  default={FV} />
+                    <Input changeHandler={this.handleChangePY.bind(this)} name={this.props.PY} default={PY} />
+                    <Input changeHandler={this.handleChangeCY.bind(this)} name={this.props.CY} default={CY} />
+{/*
                     <div className="block">
                       <label>C/Y</label>
                       <input onChange={this.handleChangeCY.bind(this)} placeholder="C/Y" value={CY}></input>
-                    </div>
+                    </div> */}
 
                     {/* Answer Output */}
                     <h1 className="answer">{this.state.Ans}</h1>
@@ -177,4 +157,21 @@ handleSubmit(event){
         );
 
     }
+}
+const Input = (props)=>{
+  return (
+    <div className="block">
+      <label>{props.name}</label>
+      <input onChange={props.changeHandler} value={props.default}></input>
+    </div>
+  )
+}
+Calculator.defaultProps = {
+              N:"Periods",
+              I:"I%",
+              PV:"PV",
+              PMT:"PMT",
+              FV:"FV",
+              PY:"PY",
+              CY:"CY",
 }
